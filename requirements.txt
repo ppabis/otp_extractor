@@ -1,0 +1,6 @@
+qreader
+qrcode[pil]
+pyotp
+pyzbar
+protobuf
+grpcio-tools
