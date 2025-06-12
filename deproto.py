@@ -5,7 +5,7 @@ from urllib.parse import urlparse, parse_qs
 debug = False
 
 def get_payload_from_otp_url(otp_url: str, i: int, source: str) -> pb.MigrationPayload:
-    '''Extracts the otp migration payload from an otp url. This function is the core of the this appliation.'''
+    '''Extracts the otp migration payload from an otp url. This function is the core of the this application.'''
     
     parsed_url = urlparse(otp_url)
     if debug: print(f"parsed_url={parsed_url}")
