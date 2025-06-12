@@ -28,9 +28,9 @@ def main():
         if args.output:
             os.makedirs(args.output, exist_ok=True)
             save_all_otps(otps, args.output)
-        elif args.print:
-            from pprint import pprint
-            pprint(otps)
+        if args.print:
+            for otp in otps:
+                print(f"{otp['issuer']} {otp['name']}: {otp['url']}")
 
 if __name__ == "__main__":
     main()
