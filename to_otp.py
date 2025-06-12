@@ -24,7 +24,6 @@ def to_otp(payload: pb.MigrationPayload):
     otps = []
     for raw_otp in payload.otp_parameters:
         secret = convert_secret_from_bytes_to_base32_str(raw_otp.secret)
-        print('OTP enum type:', get_enum_name_by_number(raw_otp, 'type'))
         otp_type = get_otp_type_str_from_code(raw_otp.type)
         raw_otp = fix_proto_issuer(raw_otp)
         otp_url = build_otp_url(secret, raw_otp)
