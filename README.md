@@ -9,13 +9,22 @@ version that will load screenshots.
 From screenshots of Google Authenticator exports this application will create
 fresh QR codes and print `otpauth://` addresses to the console.
 
-Usage:
+Install requirements with `venv` and optionally compile the Protobuf model file.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python -m grpc_tools.protoc -I. --python_out=. google_auth.proto
+```
+
+### Usage
 
 ```bash
 python main.py --input myexport.jpg --output new_qr_codes --print
 ```
 
-Parameters:
+### Parameters
 
 * `--input` - specify input image with export from Authenticator to process,
 * `--output` - save all OTP QR codes into this directory (optional),
